@@ -1,320 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Indian Instincts - Perfumes & Chains</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/8bb4f3a9572d5ffbe8aecdd85f986a2a?family=BancoDi" rel="stylesheet" type="text/css"/>
 
-  :root {
-    --color-bg: #0a0a0a; /* Deep black background */
-    --color-text-primary: #bfa054; /* Gold */
-    --color-text-secondary: #d4bb61; /* Light gold */
-    --color-accent: #bfa054; /* Gold accent */
-    --color-button-bg: #bfa054; /* Gold button background */
-    --color-button-text: #0a0a0a; /* Black text on button */
-    --color-button-hover-bg: #dbc472; /* Lighter gold on hover */
-    --color-card-bg: rgba(47, 47, 47, 0.85); /* Dark translucent cards */
-    --border-radius: 0.75rem;
-    --shadow-light: rgba(191, 160, 84, 0.15);
-    --shadow-medium: rgba(191, 160, 84, 0.3);
-    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
+    <title>Alpha Torque by Indian Instincts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--color-bg);
-    color: var(--color-text-primary);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-    transition: color var(--transition-base);
-  }
-  a:hover,
-  a:focus {
-    color: var(--color-button-hover-bg);
-    outline: none;
-  }
-
-  header {
-    position: sticky;
-    top: 0;
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: saturate(180%) blur(8px);
-    z-index: 1000;
-    box-shadow: 0 2px 8px var(--shadow-light);
-  }
-
-  nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .logo {
-    font-weight: 800;
-    font-size: 1.5rem;
-    letter-spacing: 0.08em;
-    color: var(--color-accent);
-    user-select: none;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-    font-weight: 600;
-    font-size: 1rem;
-  }
-
-  .nav-links a {
-    position: relative;
-    padding-bottom: 0.2rem;
-    color: var(--color-text-secondary);
-  }
-  .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    width: 0%;
-    background: var(--color-accent);
-    transition: width var(--transition-base);
-  }
-  .nav-links a:hover,
-  .nav-links a:focus {
-    color: var(--color-accent);
-  }
-  .nav-links a:hover::after,
-  .nav-links a:focus::after {
-    width: 100%;
-  }
-
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 3rem 2rem 6rem;
-    display: flex;
-    flex-direction: column;
-    gap: 6rem;
-  }
-
-  /* Hero Section */
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    max-width: 700px;
-  }
-
-  .hero h1 {
-    font-weight: 800;
-    font-size: 3.5rem;
-    line-height: 1.1;
-    color: var(--color-accent);
-    text-shadow: 0 2px 8px rgba(191,160,84,0.5);
-  }
-
-  .hero p {
-    color: var(--color-text-secondary);
-    font-size: 1.125rem;
-    max-width: 520px;
-  }
-
-  .cta-btn {
-    background-color: var(--color-button-bg);
-    color: var(--color-button-text);
-    font-weight: 700;
-    font-size: 1.125rem;
-    padding: 1rem 2.5rem;
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    box-shadow: 0 8px 20px var(--shadow-medium);
-    transition: background-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
-    user-select: none;
-  }
-  .cta-btn:hover,
-  .cta-btn:focus {
-    background-color: var(--color-button-hover-bg);
-    transform: scale(1.05);
-    box-shadow: 0 12px 28px rgba(219,196,114,0.6);
-    outline: none;
-  }
-
-  /* Product Sections */
-  .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 2.5rem;
-  }
-
-  .card {
-    background-color: var(--color-card-bg);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 15px var(--shadow-light);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    color: var(--color-text-secondary);
-    transition: box-shadow var(--transition-base), transform var(--transition-base), color var(--transition-base);
-  }
-  .card:hover, .card:focus-within {
-    box-shadow: 0 10px 30px var(--shadow-medium);
-    transform: translateY(-5px);
-    color: var(--color-accent);
-    outline: none;
-  }
-
-  .card-icon {
-    font-size: 3rem;
-    color: var(--color-accent);
-    user-select: none;
-    filter: drop-shadow(0 0 1px rgba(191,160,84,0.8));
-  }
-
-  .card h3 {
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin: 0;
-    color: var(--color-accent);
-  }
-
-  .card p {
-    font-size: 1rem;
-    margin: 0;
-    flex-grow: 1;
-  }
-
-  /* Footer */
-  footer {
-    padding: 2rem 1rem;
-    text-align: center;
-    font-size: 0.875rem;
-    color: var(--color-text-secondary);
-    user-select: none;
-  }
-
-  /* WhatsApp Floating Button */
-  .whatsapp-float {
-    position: fixed;
-    width: 56px;
-    height: 56px;
-    bottom: 24px;
-    right: 24px;
-    background-color: var(--color-accent);
-    color: var(--color-bg);
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(191, 160, 84, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: background-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
-    z-index: 1100;
-    user-select: none;
-  }
-  .whatsapp-float:hover,
-  .whatsapp-float:focus {
-    background-color: var(--color-button-hover-bg);
-    box-shadow: 0 6px 20px rgba(219,196,114,1);
-    outline: none;
-    transform: scale(1.1);
-  }
-  .whatsapp-icon {
-    width: 28px;
-    height: 28px;
-    fill: var(--color-bg);
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2.5rem;
-    }
-    nav {
-      padding: 1rem;
-    }
-    main {
-      padding: 3rem 1rem 4rem;
-    }
-  }
-</style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/8bb4f3a9572d5ffbe8aecdd85f986a2a?family=BancoDi" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <nav aria-label="Primary navigation">
-    <div class="logo" tabindex="0" aria-label="Indian Instincts logo">Indian Instincts</div>
-    <div class="nav-links">
-      <a href="#perfumes" tabindex="0">Perfumes</a>
-      <a href="#chains" tabindex="0">Chains</a>
-      <a href="#contact" tabindex="0">Contact</a>
+    <div class="hero">
+        <div class="gold-half-circle">
+            <img src="images/chain.png" alt="Chain Overlay" class="chain-overlay">
+            <img src="images/logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="hero-content">
+            <h1 class="title">ALPHA TORQUE</h1>
+            <p class="subtitle">By Indian Instincts</p>
+        </div>
     </div>
-  </nav>
-</header>
-<main>
-  <section class="hero" role="banner" aria-label="Hero section">
-    <h1>Exclusive Perfumes & Chains</h1>
-    <p>Discover our curated collection of premium men's perfumes and elegant chains designed for timeless style.</p>
-    <button onclick="location.href='https://wa.me/919775508504?text=I%20would%20like%20to%20place%20an%20order%20with%20Indian%20Instincts'" class="cta-btn" tabindex="0" aria-label="Order Now via WhatsApp">Order Now</button>
-  </section>
 
-  <section class="products" id="perfumes" aria-label="Men's Perfumes">
-    <article class="card" tabindex="0" aria-labelledby="perfume1-title">
-      <div class="card-icon" aria-hidden="true">🌿</div>
-      <h3 id="perfume1-title">Royal Oud</h3>
-      <p>A captivating blend of oud and spices that exudes confidence and charisma.</p>
-    </article>
+    <div class="container">
+        <p class="description">
+            Crafted for men who lead, not follow — this Rhodium-Plated Stainless Steel Chain is built to command attention.
+            With a rugged core of durable stainless steel and a sleek rhodium finish, it delivers unmatched shine, strength,
+            and resistance to wear. Whether you're in the streets or the spotlight, this chain is your signature of power,
+            grit, and style.
+        </p>
 
-    <article class="card" tabindex="0" aria-labelledby="perfume2-title">
-      <div class="card-icon" aria-hidden="true">🔥</div>
-      <h3 id="perfume2-title">Spice Trail</h3>
-      <p>Bold and intense notes of cardamom and cinnamon for the modern man.</p>
-    </article>
-  </section>
+        <div class="features">
+            <div class="feature">
+                <img src="images/chain.png" alt="Rhodium Plated Finishing">
+                <div class="feature-text">Rhodium Plated Finishing</div>
+            </div>
 
-  <section class="products" id="chains" aria-label="Men's Chains">
-    <article class="card" tabindex="0" aria-labelledby="chain1-title">
-      <div class="card-icon" aria-hidden="true">⛓️</div>
-      <h3 id="chain1-title">Elegant Silver Chain</h3>
-      <p>Simple yet sophisticated silver chains perfect for daily elegance.</p>
-    </article>
+            <div class="feature">
+                <img src="images/chain.png" alt="Minimalistic Elite & Premium design">
+                <div class="feature-text">Minimalistic Elite & Premium design</div>
+            </div>
 
-    <article class="card" tabindex="0" aria-labelledby="chain2-title">
-      <div class="card-icon" aria-hidden="true">🔗</div>
-      <h3 id="chain2-title">Gold Plated Chain</h3>
-      <p>Delicately crafted gold plated chains that speak volumes in style.</p>
-    </article>
-  </section>
-</main>
+            <div class="feature">
+                <img src="images/chain.png" alt="OG design & Eye-catching looks">
+                <div class="feature-text">OG design & Eye-catching looks</div>
+            </div>
+        </div>
 
-<footer>
-  &copy; 2024 Indian Instincts. All rights reserved.
-</footer>
+        <div class="material-care">
+            <p>
+                Wipe your jewellery with a soft cloth after every use.<br>
+                Always store your jewellery in a flat box to avoid accidental scratches.<br>
+                Do not soak your jewellery in water. Clean your jewellery using a soft brush.<br>
+                Keep sprays and perfumes away from your jewellery.
+            </p>
+        </div>
+    </div>
 
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/919775508504?text=I%20would%20like%20to%20place%20an%20order%20with%20Indian%20Instincts" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Order on WhatsApp with Indian Instincts" title="Order on WhatsApp" tabindex="0">
-  <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path d="M20.52 3.48A11.91 11.91 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.66 4.09 1.78 5.72L0 24l6.49-1.64A11.91 11.91 0 0 0 12 24c6.63 0 12-5.37 12-12a11.9 11.9 0 0 0-3.48-8.52zm-8.52 16.06a7.49 7.49 0 0 1-3.81-1.05l-.27-.16-3.8 1.02 1.02-3.69-.18-.3a7.49 7.49 0 1 1 6.04 4.18zm3.93-5.1c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.16.22-.62.73-.76.88-.14.16-.28.18-.5.06a4.56 4.56 0 0 1-1.35-.85 5.29 5.29 0 0 1-1-1.23c-.1-.17 0-.28.08-.39.09-.09.2-.22.3-.34.1-.11.13-.18.2-.3s.03-.22-.02-.3c-.05-.09-.5-1.2-.68-1.62a.742.742 0 0 0-1.02-.4c-.36.14-1.4.83-1.4 2.02 0 1.19 1.44 2.35 1.64 2.5.2.16 2.85 4.35 6.9 6.09.96.41 1.7.66 2.28.84.96.3 1.83.26 2.52.16.77-.12 2.34-.95 2.67-1.87.33-.92.33-1.72.23-1.88-.1-.16-.34-.26-.72-.44z"/>
-  </svg>
-</a>
-
+    <div class="order-half-circle">
+        <a href="https://wa.me/919775508504?text=I%20would%20like%20to%20place%20an%20order%20with%20Indian%20Instinct" target="_blank" class="order-btn">Order Now</a>
+    </div>
 </body>
 </html>
-
